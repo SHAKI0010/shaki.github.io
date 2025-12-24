@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هشدار</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #1a1a1a, #333333);
+            font-family: 'Varela Round', sans-serif;
+        }
+
+        .alert-box {
+            background: linear-gradient(145deg, #000000, #222222);
+            color: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.6), 0 0 20px #ff0000, 0 0 30px #ff0000;
+            transform: scale(0);
+            animation: popIn 0.6s forwards;
+            max-width: 90%;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            60% {
+                transform: scale(1.1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .alert-box::after {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            border-radius: 20px;
+            box-shadow: 0 0 40px #ff0000, 0 0 80px #ff0000, 0 0 120px #ff0000;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        /* متن ریسپانسیو برای گوشی */
+        @media (max-width: 480px) {
+            .alert-box {
+                font-size: 18px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="alert-box">
+        از برنامه خارج شوید و دوباره وارد شوید
+    </div>
+</body>
+</html>
